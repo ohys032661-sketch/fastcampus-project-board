@@ -78,7 +78,7 @@ class JpaRepositoryTest {
         Article article = articleRepository.findById(1L).orElseThrow();
         long previousArticleCount = articleRepository.count();//총 게시글수
         long previousCommetCount = articleCommentRepository.count();//총댓글수
-        long deletedCount = article.getComments().size();//삭제할 댓글수
+        long deletedCount = article.getArticleComments().size();//삭제할 댓글수
 
         //When
         articleRepository.delete(article);
